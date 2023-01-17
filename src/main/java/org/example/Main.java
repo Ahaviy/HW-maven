@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<University> universities = new ArrayList<>();
+/*        ArrayList<University> universities = new ArrayList<>();
         University university = new UniversityBuilder("SPBGUT", "Санкт-Петербургский государственный университет " +
                 "телекоммуникаций им. проф. М.А.Бонч-Бруевича").setShortName("СПБГУТ им. проф. М.А.Бонч-Бруевича").setYearOfFoundation(1930).setMainProfile(StudyProfile.TELECOMMUNICATION).createUniversity();
         universities.add(university);
@@ -36,7 +36,7 @@ public class Main {
         for (Student stud : students) {
             System.out.println(stud);
             System.out.println("");
-        }
+        }*/
 
 
     }
