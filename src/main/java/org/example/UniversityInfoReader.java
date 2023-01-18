@@ -3,6 +3,7 @@ package org.example;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbookFactory;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,7 +29,11 @@ public class UniversityInfoReader {
     }
 
     public ArrayList<University> getUniversities() {
-
+        if (filePath == null || !(new File(filePath)).exists()) {
+            System.out.println("Невозможно найти файл данных");
+            System.out.println("Дальнейшее чтение из файла не возможно!");
+            return null;
+        }
         try (FileInputStream fileInputStream = new FileInputStream(filePath)) {
             XSSFWorkbook xssfw = (new XSSFWorkbookFactory()).create(fileInputStream);
             if (xssfw.getSheetIndex(UNIVERSITIESSHEETNAME) == -1) {
@@ -39,7 +44,9 @@ public class UniversityInfoReader {
 
 
 
+
             xssfw.close();
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
