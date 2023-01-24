@@ -1,6 +1,11 @@
 package org.example;
 
+import org.example.comparators.Comparators;
+import org.example.comparators.CompareStudent;
+import org.example.comparators.CompareUniversity;
+
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,15 +29,9 @@ public class Main {
         System.out.println("Проверка корректности прочитанных данных:");
         System.out.println();
         System.out.println("Список университетов: ");
-        for (University univer : universities) {
-            System.out.println(univer);
-            System.out.println("");
-        }
+        universities.stream().sorted(Comparators.getUniversityComporator(CompareUniversity.byFullName)).forEach(System.out::println);
         System.out.println("Список студентов: ");
-        System.out.println();
-        for (Student stud : students) {
-            System.out.println(stud);
-            System.out.println("");
-        }
+        students.stream().sorted(Comparators.getStudentComparator(CompareStudent.UniversityId)).forEach(System.out::println);
+
     }
 }

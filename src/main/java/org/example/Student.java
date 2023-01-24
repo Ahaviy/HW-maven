@@ -52,6 +52,6 @@ public class Student {
         sb.append("id Университета: ").append(universityId).append("\n");
         sb.append("Курс: ").append(currentCourseNumber == 0 ? "не указанно" : Integer.toString(currentCourseNumber)).append("\n");
         sb.append("Средний бал: ").append(avgExamScore == 0 ? "не указанно" : Float.toString(avgExamScore)).append("\n");
-        return sb.toString().trim();
+        return sb.toString();
     }
 }

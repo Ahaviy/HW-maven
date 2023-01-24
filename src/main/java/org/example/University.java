@@ -59,6 +59,6 @@ public class University {
         sb.append("Согращенное название: ").append(shortName).append("\n");
         sb.append("Год основания: ").append(yearOfFoundation == 0 ? "неуказанно" : Integer.toString(yearOfFoundation)).append("\n");
         sb.append("Специализация: ").append(mainProfile.getRusName()).append("\n");
-        return sb.toString().trim();
+        return sb.toString();
     }
 }
