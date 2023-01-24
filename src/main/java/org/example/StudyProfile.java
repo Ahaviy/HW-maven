@@ -1,8 +1,8 @@
 package org.example;
 
 public enum StudyProfile {
-    MEDICINE ("РњРµРґРёС†РёРЅР°"), PHYSICS ("Р¤РёР·РёРєР°"), LINGUISTICS ("РЇР·С‹РєРѕРІРµРґРёРЅРёРµ"),
-    MATHEMATICS("РњР°С‚РµРјР°С‚РёРєР°"), UNKNOWN("РќРµ СѓРєР°Р·Р°РЅРѕ");
+    MEDICINE ("Медицина"), PHYSICS ("Физика"), LINGUISTICS ("Языковединие"),
+    MATHEMATICS("Математика"), UNKNOWN("Не указано");
 
     private String rusName;
 

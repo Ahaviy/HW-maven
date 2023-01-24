@@ -48,10 +48,10 @@ public class Student {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Р¤РРћ: ").append(fullName).append("\n");
-        sb.append("id РЈРЅРёРІРµСЂСЃРёС‚РµС‚Р°: ").append(universityId).append("\n");
-        sb.append("РљСѓСЂСЃ: ").append(currentCourseNumber == 0 ? "РЅРµ СѓРєР°Р·Р°РЅРЅРѕ" : Integer.toString(currentCourseNumber)).append("\n");
-        sb.append("РЎСЂРµРґРЅРёР№ Р±Р°Р»: ").append(avgExamScore == 0 ? "РЅРµ СѓРєР°Р·Р°РЅРЅРѕ" : Float.toString(avgExamScore)).append("\n");
+        sb.append("ФИО: ").append(fullName).append("\n");
+        sb.append("id Университета: ").append(universityId).append("\n");
+        sb.append("Курс: ").append(currentCourseNumber == 0 ? "не указанно" : Integer.toString(currentCourseNumber)).append("\n");
+        sb.append("Средний бал: ").append(avgExamScore == 0 ? "не указанно" : Float.toString(avgExamScore)).append("\n");
         return sb.toString().trim();
     }
 }

@@ -4,40 +4,35 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-/*        ArrayList<University> universities = new ArrayList<>();
-        University university = new UniversityBuilder("SPBGUT", "РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіСЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚ " +
-                "С‚РµР»РµРєРѕРјРјСѓРЅРёРєР°С†РёР№ РёРј. РїСЂРѕС„. Рњ.Рђ.Р‘РѕРЅС‡-Р‘СЂСѓРµРІРёС‡Р°").setShortName("РЎРџР‘Р“РЈРў РёРј. РїСЂРѕС„. Рњ.Рђ.Р‘РѕРЅС‡-Р‘СЂСѓРµРІРёС‡Р°").setYearOfFoundation(1930).setMainProfile(StudyProfile.TELECOMMUNICATION).createUniversity();
-        universities.add(university);
-        university =
-                new UniversityBuilder("ITMO", "РќР°С†РёРѕРЅР°Р»СЊРЅС‹Р№ РёСЃСЃР»РµРґРѕРІР°С‚РµР»СЊСЃРєРёР№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚ РРўРњРћ").setMainProfile(StudyProfile.IT).createUniversity();
-        universities.add(university);
-
-        university = new UniversityBuilder("RGPU", "Р РѕСЃСЃРёР№СЃРєРёР№ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅС‹Р№ РїРµРґР°РіРѕРіРёС‡РµСЃРєРёР№ СѓРЅРёРІРµСЂСЃРёС‚РµС‚ РёРјРµРЅРё Рђ. Р" +
-                "." + " Р“РµСЂС†РµРЅР°").setMainProfile(StudyProfile.PEDAGOGICAL).setYearOfFoundation(1797).createUniversity();
-        universities.add(university);
-
-        ArrayList<Student> students = new ArrayList<>();
-        Student student =
-                new StudentBuilder("РџСѓРїРєРёРЅ Р’Р°СЃРёР»РёР№ Р’Р°СЃРёР»СЊРµРІРёС‡").setUniversityId("ITMO").setCurrentCourseNumber(3).setAvgExamScore(4.6f).createStudent();
-        students.add(student);
-        student = new StudentBuilder("РРІР°РЅРѕРІ РРІР°РЅ РРІР°РЅРѕРІРёС‡").setUniversityId("SPBGUT").createStudent();
-        students.add(student);
-        student =
-                new StudentBuilder("РћСЂР»РѕРІР° Р›РёР·Р°РІРµС‚Р° РџРµС‚СЂРѕРІРЅР°").setUniversityId("RGPU").setCurrentCourseNumber(1).createStudent();
-        students.add(student);
-
-        System.out.println("РЎРїРёСЃРѕРє СѓРЅРёРІРµСЂСЃРёС‚РµС‚РѕРІ: ");
+        UniversityInfoReader uiReader = UniversityInfoReader.getUIReader();
+        uiReader.setFilePath("src/main/resources/universityInfo.xlsx");
+        System.out.println("Читаем из файлов ресурсов список университетов:");
+        ArrayList<University> universities = uiReader.getUniversities();
+        if (universities != null) {
+            System.out.println("Список университетов успешно прочитан.");
+        } else {
+            System.out.println("не удалось прочитать список университетов");
+        }
+        System.out.println("Читаем из файлов ресурсов список студентов:");
+        ArrayList<Student> students = uiReader.getStudents();
+        if (students != null) {
+            System.out.println("Список студентов успешно прочитан.");
+        } else {
+            System.out.println("не удалось прочитать список студентов");
+        }
+        System.out.println();
+        System.out.println("Проверка корректности прочитанных данных:");
+        System.out.println();
+        System.out.println("Список университетов: ");
         for (University univer : universities) {
             System.out.println(univer);
             System.out.println("");
         }
-
-        System.out.println("РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ: ");
+        System.out.println("Список студентов: ");
+        System.out.println();
         for (Student stud : students) {
             System.out.println(stud);
             System.out.println("");
-        }*/
-
-
+        }
     }
 }

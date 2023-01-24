@@ -55,10 +55,10 @@ public class University {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("id: ").append(id).append("\n");
-        sb.append("РќР°Р·РІР°РЅРёРµ: ").append(fullName).append("\n");
-        sb.append("РЎРѕРіСЂР°С‰РµРЅРЅРѕРµ РЅР°Р·РІР°РЅРёРµ: ").append(shortName).append("\n");
-        sb.append("Р“РѕРґ РѕСЃРЅРѕРІР°РЅРёСЏ: ").append(yearOfFoundation == 0 ? "РЅРµСѓРєР°Р·Р°РЅРЅРѕ" : Integer.toString(yearOfFoundation)).append("\n");
-        sb.append("РЎРїРµС†РёР°Р»РёР·Р°С†РёСЏ: ").append(mainProfile.getRusName()).append("\n");
+        sb.append("Название: ").append(fullName).append("\n");
+        sb.append("Согращенное название: ").append(shortName).append("\n");
+        sb.append("Год основания: ").append(yearOfFoundation == 0 ? "неуказанно" : Integer.toString(yearOfFoundation)).append("\n");
+        sb.append("Специализация: ").append(mainProfile.getRusName()).append("\n");
         return sb.toString().trim();
     }
 }
