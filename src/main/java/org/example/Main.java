@@ -25,13 +25,15 @@ public class Main {
         } else {
             System.out.println("не удалось прочитать список студентов");
         }
-        System.out.println();
+        /*System.out.println();
         System.out.println("Проверка корректности прочитанных данных:");
         System.out.println();
         System.out.println("Список университетов: ");
         universities.stream().sorted(Comparators.getUniversityComporator(CompareUniversity.byFullName)).forEach(System.out::println);
         System.out.println("Список студентов: ");
-        students.stream().sorted(Comparators.getStudentComparator(CompareStudent.UniversityId)).forEach(System.out::println);
+        students.stream().sorted(Comparators.getStudentComparator(CompareStudent.UniversityId)).forEach(System.out::println);*/
+
+        new XLSWriter().writeXLS(StatisticGenerator.createStatistics(students,universities), "test.xlsx");
 
     }
 }

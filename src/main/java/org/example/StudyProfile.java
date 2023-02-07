@@ -13,4 +13,5 @@ public enum StudyProfile {
     StudyProfile(String rusName) {
         this.rusName = rusName;
     }
+
 }
