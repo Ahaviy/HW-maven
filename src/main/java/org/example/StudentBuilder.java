@@ -8,7 +8,7 @@ public class StudentBuilder {
 
     public StudentBuilder(String fullName) {
         this.fullName = fullName;
-        universityId = "РЅРµС‚ РґР°РЅРЅС‹С…";
+        universityId = "нет данных";
         currentCourseNumber = 0;
         avgExamScore = 0;
     }
