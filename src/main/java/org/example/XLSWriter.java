@@ -15,21 +15,24 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Collection;
+import java.util.logging.Logger;
 
 public class XLSWriter {
+
+    private final static Logger logger = Logger.getLogger(XLSWriter.class.getName());
 
     private final static String OUTPUTPATH = "src/main/resources/";
 
     public boolean writeXLS(Collection<Statistics> collection, String fileName) {
+        logger.fine("генерируем XSSFWorkbook");
         XSSFWorkbook xssfwb = new XSSFWorkbook();
         XSSFSheet sheet = xssfwb.createSheet("Результат");
+        logger.fine("заполняем и оформляем названия столбцов");
         sheet.setColumnWidth(0, 5000);
         sheet.setColumnWidth(1, 12000);
         sheet.setColumnWidth(2, 11000);
         sheet.setColumnWidth(3, 7000);
         sheet.setColumnWidth(4, 25000);
-
-
         CellStyle style1 = xssfwb.createCellStyle();
         Font font = xssfwb.createFont();
         font.setBold(true);
@@ -51,6 +54,7 @@ public class XLSWriter {
         row.getCell(3).setCellStyle(style1);
         row.getCell(4).setCellStyle(style1);
         int rowNumber = 1;
+        logger.fine("заполняем данными");
         for (Statistics statElemet : collection) {
             row = sheet.createRow(rowNumber++);
             row.createCell(0).setCellValue(statElemet.getProfile().getRusName());
@@ -65,19 +69,16 @@ public class XLSWriter {
             row.getCell(2).setCellStyle(style2);
             row.getCell(3).setCellStyle(style2);
         }
-
-
+        logger.info("XSSFWorkbook успешно заполнен данными");
         boolean result = false;
         try (FileOutputStream out = new FileOutputStream(new File(OUTPUTPATH + fileName))) {
             xssfwb.write(out);
+            logger.info("результат успешно сохранен в файл");
             result = true;
         } catch (IOException e) {
-            System.out.println("не удалось записать файл: " + OUTPUTPATH + fileName);
-            e.printStackTrace();
+            logger.warning("не удалось записать результат в файл: " + OUTPUTPATH + fileName);
+            logger.warning(e.getMessage());
         }
-
         return result;
-
-
     }
 }
